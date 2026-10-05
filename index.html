@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Note 💌</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background">
+        <div class="heart heart-1">♡</div>
+        <div class="heart heart-2">♡</div>
+        <div class="heart heart-3">♡</div>
+        <div class="heart heart-4">♡</div>
+        <div class="heart heart-5">♡</div>
+    </div>
+
+
+    <!-- =========================
+         BOOK
+    ========================== -->
+
+    <main class="book" id="book">
+
+        <!-- COVER -->
+
+        <section class="cover" id="cover">
+
+            <div class="cover-content">
+
+                <div class="small-text">
+                    A little note for
+                </div>
+
+                <figure class="polaroid">
+                    <img
+                        class="cover-photo"
+                        src="Dinda.jpeg"
+                        alt="Dinda Safitri"
+                    >
+                    <figcaption>The birthday girl</figcaption>
+                </figure>
+
+                <h1>
+                    Dinda Safitri
+                </h1>
+
+                <div class="divider"></div>
+
+                <p>
+                    ✦ Happy Birthday ✦
+                </p>
+
+                <button
+                    id="openButton"
+                    type="button"
+                >
+                    Open My Note 💌
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HALAMAN PERTAMA
+        ========================== -->
+
+        <section
+            class="inside"
+            id="inside"
+        >
+
+            <div class="page">
+
+                <div class="page-header">
+                    ✦ BIRTHDAY NOTE ✦
+                </div>
+
+                <div class="page-content">
+
+                    <p class="greeting">
+                        Dear Dinda Safitri,
+                    </p>
+
+                    <p id="message"></p>
+
+                    <p
+                        class="ending"
+                        id="ending"
+                    >
+                        Have a good one, yaa. 🤍
+                    </p>
+
+                </div>
+
+                <div class="page-footer">
+                    With a little bit of courage,
+                    <br>
+                    from someone who cares about you. ♡
+                </div>
+
+            </div>
+
+            <button
+                class="next-button"
+                id="nextButton"
+                type="button"
+            >
+                Turn the page →
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             HALAMAN KEDUA
+        ========================== -->
+
+        <section
+            class="second-page"
+            id="secondPage"
+        >
+
+            <h2>
+                One more thing... 👀
+            </h2>
+
+            <figure class="memory-photo">
+                <img
+                    src="Safitri.jpg"
+                    alt="Safitri waktu kecil"
+                >
+                <figcaption>Safitri kecil</figcaption>
+            </figure>
+
+            <p>
+                Actually, I'm kinda glad
+                I got the chance to know you.
+            </p>
+
+            <p>
+                I don't know where this little
+                story is going, but I'm happy
+                that you're part of my days.
+            </p>
+
+            <p class="maybe">
+                Maybe...
+            </p>
+
+            <p class="secret-text">
+                I like you a little more
+                than I should. 🤍
+            </p>
+
+            <button
+                id="secretButton"
+                type="button"
+            >
+                Tap here if you're curious 💌
+            </button>
+
+            <p
+                id="secretMessage"
+                class="secret-message"
+            >
+                So yeah...
+                maybe you're a little special to me. 🤍
+                <br><br>
+                <span class="secret-postscript">
+                    P.S. Kalau kamu senyum bacanya, misi kecilku berhasil. ✨
+                </span>
+            </p>
+
+            <button
+                class="restart-button"
+                id="restartButton"
+                type="button"
+            >
+                Read Again ↻
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

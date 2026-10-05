@@ -1,0 +1,1171 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #5a3b46;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8fa 0%,
+            #f5e1e7 50%,
+            #e9cbd4 100%
+        );
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #a64d6b;
+
+    font-size: 30px;
+
+    opacity: 0.25;
+
+    animation:
+        floatingHeart
+        10s
+        linear
+        infinite;
+}
+
+
+/* Posisi hati */
+
+.heart:nth-child(1) {
+    left: 10%;
+
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+
+    animation-delay: 5s;
+}
+
+.heart:nth-child(4) {
+    left: 75%;
+
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+
+    animation-delay: 7s;
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.25;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(30deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   BUKU
+===================================================== */
+
+.book {
+    position: relative;
+
+    width: min(
+        1000px,
+        90vw
+    );
+
+    height: min(
+        650px,
+        calc(100vh - 48px)
+    );
+
+    margin: 24px auto;
+
+    perspective: 1800px;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(
+                80,
+                40,
+                55,
+                0.25
+            )
+        );
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.cover {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #813650,
+            #b45b76
+        );
+
+    color: white;
+
+    border-radius:
+        14px
+        22px
+        22px
+        14px;
+
+    transform-origin:
+        left center;
+
+    transition:
+        transform 1.6s
+        cubic-bezier(
+            0.77,
+            0,
+            0.18,
+            1
+        );
+
+    box-shadow:
+        inset -15px 0 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+}
+
+
+/* Saat buku dibuka */
+
+.cover.open {
+    transform:
+        rotateY(-168deg);
+}
+
+
+/* =====================================================
+   ISI COVER
+===================================================== */
+
+.cover-content {
+    width: 100%;
+
+    padding: 40px;
+}
+
+
+.small-text {
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    opacity: 0.85;
+}
+
+
+.polaroid {
+    width: min(150px, 32vw);
+
+    margin: 18px auto 20px;
+
+    padding: 7px 7px 10px;
+
+    background: #fffdf8;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 10px 24px
+        rgba(50, 20, 32, 0.24);
+
+    transform: rotate(-2deg);
+}
+
+
+.cover-photo {
+    display: block;
+
+    width: 100%;
+
+    height: min(220px, 32vh);
+
+    object-fit: cover;
+
+    object-position: center 64%;
+
+    border-radius: 2px;
+}
+
+
+.polaroid figcaption {
+    padding-top: 8px;
+
+    color: #8b3e57;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    line-height: 1.2;
+}
+
+
+.cover h1 {
+    margin:
+        20px
+        0
+        15px;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            64px
+        );
+
+    font-weight: normal;
+}
+
+
+.divider {
+    width: 120px;
+
+    height: 1px;
+
+    margin:
+        0
+        auto
+        20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+}
+
+
+.cover p {
+    margin:
+        0
+        0
+        30px;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    border-radius: 30px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+button:hover {
+    transform:
+        translateY(-3px)
+        scale(1.03);
+}
+
+
+button:active {
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+
+/* Tombol Open My Note */
+
+.cover button {
+    padding:
+        14px
+        28px;
+
+    font-size: 17px;
+
+    color: #8b3e57;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            0,
+            0,
+            0,
+            0.20
+        );
+}
+
+
+/* =====================================================
+   ISI BUKU
+===================================================== */
+
+.inside {
+    position: absolute;
+
+    inset:
+        18px
+        24px;
+
+    background: #fffdf8;
+
+    border-radius: 8px;
+
+    box-shadow:
+        inset
+        0 0 30px
+        rgba(
+            90,
+            55,
+            35,
+            0.08
+        );
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HALAMAN
+===================================================== */
+
+.page {
+    width: 100%;
+
+    height: 100%;
+
+    padding:
+        40px
+        55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.page-header {
+    flex-shrink: 0;
+
+    text-align: center;
+
+    color: #a04d68;
+
+    font-size: 16px;
+
+    letter-spacing: 4px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid
+        #ead6dc;
+}
+
+
+/* =====================================================
+   KONTEN
+===================================================== */
+
+.page-content {
+    flex: 1;
+
+    min-height: 0;
+
+    padding-top: 30px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #d8a9b8
+        transparent;
+}
+
+
+/* Sapaan */
+
+.greeting {
+    margin:
+        0
+        0
+        28px;
+
+    font-size: 30px;
+
+    color: #8e3d58;
+}
+
+
+/* =====================================================
+   TEKS TYPING
+===================================================== */
+
+#message {
+    white-space: pre-line;
+
+    overflow-wrap: anywhere;
+
+    padding-right: 10px;
+}
+
+
+/* Scrollbar Chrome / Edge */
+
+.page-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.page-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.page-content::-webkit-scrollbar-thumb {
+    background: #d8a9b8;
+
+    border-radius: 10px;
+}
+
+
+/* Cursor mengetik */
+
+#message::after {
+    content: "|";
+
+    animation:
+        blink
+        0.7s
+        infinite;
+}
+
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   ENDING
+===================================================== */
+
+.ending {
+    flex-shrink: 0;
+
+    margin:
+        15px
+        0
+        0;
+
+    color: #8f5268;
+
+    font-style: italic;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s;
+}
+
+
+.ending.show {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.page-footer {
+    flex-shrink: 0;
+
+    text-align: center;
+
+    color: #a87887;
+
+    font-style: italic;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    border-top:
+        1px solid
+        #ead6dc;
+
+    padding-top: 15px;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-button {
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 25px;
+
+    z-index: 20;
+
+    padding:
+        11px
+        20px;
+
+    background: #92506a;
+
+    color: white;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            80,
+            40,
+            55,
+            0.20
+        );
+}
+
+
+.next-button.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   HALAMAN KEDUA
+===================================================== */
+
+.second-page {
+    position: absolute;
+
+    inset:
+        18px
+        24px;
+
+    z-index: 15;
+
+    background: #fffdf8;
+
+    border-radius: 8px;
+
+    padding:
+        60px
+        70px
+        25px;
+
+    text-align: center;
+
+    transform:
+        translateX(110%);
+
+    transition:
+        transform 1.2s
+        cubic-bezier(
+            0.77,
+            0,
+            0.18,
+            1
+        );
+
+    box-shadow:
+        inset
+        0 0 30px
+        rgba(
+            90,
+            55,
+            35,
+            0.08
+        );
+
+    overflow-y: auto;
+}
+
+
+.second-page.show {
+    transform:
+        translateX(0);
+}
+
+
+/* =====================================================
+   JUDUL HALAMAN KEDUA
+===================================================== */
+
+.second-page h2 {
+    margin:
+        0
+        0
+        35px;
+
+    color: #8f405a;
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            38px
+        );
+
+    font-weight: normal;
+}
+
+
+.memory-photo {
+    width: min(180px, 48vw);
+
+    margin: -14px auto 20px;
+
+    padding: 6px 6px 8px;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 8px 18px
+        rgba(80, 40, 55, 0.16);
+}
+
+
+.memory-photo img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+}
+
+
+.memory-photo figcaption {
+    padding-top: 7px;
+
+    color: #a87887;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   TEKS HALAMAN KEDUA
+===================================================== */
+
+.second-page p {
+    max-width: 650px;
+
+    margin:
+        15px
+        auto;
+
+    font-size: 18px;
+
+    line-height: 2;
+}
+
+
+/* =====================================================
+   SECRET BUTTON
+===================================================== */
+
+#secretButton {
+    margin-top: 30px;
+
+    padding:
+        13px
+        25px;
+
+    background: #92506a;
+
+    color: white;
+
+    box-shadow:
+        0 6px 15px
+        rgba(
+            80,
+            40,
+            55,
+            0.18
+        );
+}
+
+
+/* =====================================================
+   SECRET MESSAGE
+===================================================== */
+
+#secretMessage {
+    margin-top: 30px;
+
+    font-size: 23px;
+
+    line-height: 1.6;
+
+    color: #8f405a;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        all 0.8s ease;
+}
+
+
+.secret-postscript {
+    color: #a87887;
+
+    font-size: 0.72em;
+
+    font-style: italic;
+}
+
+
+#secretMessage.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   RESTART BUTTON
+===================================================== */
+
+.restart-button {
+    position: sticky;
+
+    bottom: 0;
+
+    display: block;
+
+    width: max-content;
+
+    margin: 20px -55px 0 auto;
+
+    z-index: 20;
+
+    padding:
+        10px
+        20px;
+
+    background: #ead0d8;
+
+    color: #7e3b51;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.restart-button.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .book {
+        width: 92vw;
+
+        height: min(620px, calc(100vh - 48px));
+    }
+
+    .page {
+        padding:
+            35px
+            45px;
+    }
+
+    .greeting {
+        font-size: 27px;
+    }
+
+    .page-content {
+        font-size: 17px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .book {
+        width: 92vw;
+
+        height: min(650px, calc(100vh - 48px));
+
+        margin: 24px auto;
+    }
+
+    .cover-content {
+        padding: 25px;
+    }
+
+    .small-text {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .cover h1 {
+        font-size: 36px;
+
+        margin:
+            15px
+            0
+            12px;
+    }
+
+    .cover p {
+        font-size: 17px;
+    }
+
+    .inside {
+        inset:
+            15px
+            18px;
+    }
+
+    .page {
+        padding:
+            25px
+            28px;
+    }
+
+    .page-header {
+        font-size: 13px;
+
+        letter-spacing: 3px;
+
+        padding-bottom: 15px;
+    }
+
+    .page-content {
+        padding-top: 25px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .greeting {
+        font-size: 23px;
+
+        margin-bottom: 22px;
+    }
+
+    #message {
+        padding-right: 5px;
+    }
+
+    .page-footer {
+        font-size: 12px;
+
+        padding-top: 12px;
+    }
+
+    .next-button {
+        right: 20px;
+
+        bottom: 18px;
+
+        padding:
+            9px
+            16px;
+
+        font-size: 13px;
+    }
+
+    .second-page {
+        inset:
+            15px
+            18px;
+
+        padding:
+            40px
+            25px
+            18px;
+    }
+
+    .second-page h2 {
+        font-size: 27px;
+
+        margin-bottom: 25px;
+    }
+
+    .memory-photo {
+        width: min(152px, 56vw);
+
+        margin-top: -10px;
+
+        margin-bottom: 16px;
+    }
+
+    .memory-photo figcaption {
+        font-size: 12px;
+    }
+
+    .second-page p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    #secretButton {
+        margin-top: 20px;
+
+        padding:
+            11px
+            20px;
+    }
+
+    #secretMessage {
+        font-size: 19px;
+    }
+
+    .restart-button {
+        bottom: 0;
+
+        margin-right: -2px;
+
+        padding:
+            9px
+            18px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE KECIL
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .book {
+        width: 94vw;
+
+        height: min(620px, calc(100vh - 48px));
+    }
+
+    .cover h1 {
+        font-size: 31px;
+    }
+
+    .cover button {
+        padding:
+            12px
+            22px;
+
+        font-size: 15px;
+    }
+
+    .page {
+        padding:
+            22px
+            22px;
+    }
+
+    .greeting {
+        font-size: 21px;
+    }
+
+    .page-content {
+        font-size: 14px;
+    }
+
+    .page-footer {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-height: 700px) {
+
+    .cover-content {
+        padding: 8px 24px;
+
+        transform: scale(0.94);
+    }
+
+    .polaroid {
+        width: min(132px, 32vw);
+
+        margin: 4px auto 6px;
+
+        padding: 6px 6px 8px;
+    }
+
+    .cover-photo {
+        height: min(148px, 25vh);
+    }
+
+    .polaroid figcaption {
+        padding-top: 6px;
+
+        font-size: 12px;
+    }
+
+    .cover h1 {
+        margin: 10px 0;
+    }
+
+    .cover p {
+        margin-bottom: 18px;
+    }
+
+    .cover button {
+        padding: 12px 24px;
+    }
+}
